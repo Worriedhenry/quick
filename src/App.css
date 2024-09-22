@@ -1,38 +1,222 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Barlow', sans-serif;
+  background-color: #f7f7f7;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.p-15{
+  padding: 15px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.flex{
   display: flex;
+}
+.flex-col{
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.justify-between{
+  justify-content: space-between;
+}
+.bold{
+  font-weight: bold;
+}
+.top-card{
+  color: gray;
+  font-size: 0.65rem;
+  width: 100%;
+}
+.card{
+  width: 90%;
+  height: 5.3rem;
+  border: 1px solid #e5dfdf;
+  border-radius: 5px;
+  background-color: white;
+  display: flex;
+  padding: 8px;
+  row-gap: 5px;
+  flex-direction: column;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  font-size: 0.7rem;
+}
+.small-border-radius{
+  border-radius: 5px;
+  border: 1px solid #e5dfdf;
+  padding: 2.5px;
+}
+p{
+  margin: 0;
+  padding: 0;
+}
+h3{
+  margin: 0;
+  padding: 0;
+}
+.card-footer{
+  column-gap: 5px;
+  font-size: 0.6rem;
+  color: gray;
+  margin-top: 5px;
+}
+.truncate-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 4px;
+}
+.truncate-text-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1; 
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.avatar-container {
+  position: relative;
+  display: inline-block;
+}
+
+.avatar {
+  width: 20px;
+  height: 20px;
+  background-color: #cc7432; 
   color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.status-indicator {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background-color: gray;
+  border-radius: 50%;
+  border: 1px solid white;
+  bottom: -1px;
+  right: -3px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.column-header{
+  width: 95%;
+}
+.column-container{
+  width: 100%;
+}
+.cg-5{
+  column-gap: 5px;
+}
+.rg-10{
+  row-gap: 10px;
+}
+.container{
+  height: fit-content;
+  background-color: #f8f8f8;
+  column-gap: 2.5rem;
+  padding: 10px 40px;
+  justify-content: space-around;
+}
+
+.header {
+  width: 100%;
+  background-color: #ffffff;
+  height: 4rem;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.display {
+  position: relative;
+}
+
+.down {
+  margin: 0;
+  height: 1.14rem;
+  width: 1.14rem;
+}
+
+.dis-button {
+  display: flex;
+  background-color: #ffffff;
+  padding: 0.25rem 0.4rem 0.25rem 0.4rem;
+  margin: 0.25rem 0 0.5rem 3rem;
+  border: 1px solid #333333;
+  border-radius: 4px;
+}
+
+.dis-button-text {
+  padding: 0;
+  margin: 0 0.5rem 0 0.5rem;
+  font-weight: 600;
+}
+
+.dropdown {
+  background-color: #f9f9f9;
+  /* border: 1px solid #ccc; */
+  padding: 10px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  z-index: 1000;
+  margin-left: 3rem;
+  border-radius: 10px;
+  width: 15rem;
+}
+
+.dropdown-group {
+  display: flex;
+  margin: 0px 0 10px;
+}
+.ticket-count{
+  font-size: 0.8rem;
+}
+
+.no-tickets{
+  font-size: 0.9rem;
+}
+
+.dropdown select {
+  font-weight: 600;
+  padding: 5px;
+  margin-left: auto;
+  width: 6rem;
+  margin-right: 0;
+  border-radius: 4px;
+}
+
+.responsive-columns {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); 
+  gap: 20px;
+}
+
+
+@media (max-width: 1200px) {
+  .responsive-columns {
+    grid-template-columns: repeat(3, 1fr); 
   }
 }
+
+@media (max-width: 768px) {
+  .responsive-columns {
+    grid-template-columns: 1fr; 
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 10px;
+  }
+}
+
